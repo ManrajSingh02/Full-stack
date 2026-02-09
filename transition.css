@@ -1,0 +1,179 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main {
+    height: 200px;
+    width: 100%;
+    background-color: rgba(115, 83, 48, 0.759);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    
+}
+
+.bt {
+    font-size: medium;
+    background-color: rgb(233, 204, 181);
+    padding: 15px 30px;
+    transition: all 1s;
+    list-style: none;
+    border: 5px;
+    border-radius: 10px;
+}
+
+.bt:hover {
+    transform: scale(1.2);
+    border-radius: 15px;
+    transition-duration: 0.1s;
+    border: 3px solid rgba(78, 57, 36, 0.759);
+    cursor:pointer;
+}
+
+.bt:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: rgba(115, 83, 48, 0.759);
+    width: 0%;
+}
+
+.bt:hover:after {
+    width: 100%;
+    bottom: -5px;
+    transition: 0.6s;
+}
+
+.section2 {
+    height: 100px;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(233, 204, 181);
+    margin: 100px auto;
+    display: flex;
+    transition: all 2s;
+    border-radius: 20px;
+}
+
+.section2:hover {
+    transition-duration: 1s;
+    text-transform: uppercase;
+    transform: rotate(360deg);
+    border-radius: 75%;
+    cursor:pointer;    
+}
+
+p:hover {
+    transform: rotate(360deg);
+    
+}
+
+.box {
+    height: 200px;
+    width: 100%;
+    box-sizing:border-box;
+    border: 10px solid;
+    align-content: center;
+    justify-items: center;
+}
+
+.box1 {
+    height: 200px;
+    width: 100px;
+    border: 5px;
+    align-content: center;
+    padding-left: 20px;
+}
+
+.box1:hover{
+    height: 100px;
+    width: 100px;
+    border: 5px;
+    background-color: aquamarine;
+    border-color: rgb(171, 171, 52);
+    animation-name: myanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+
+@keyframes myanimation {
+    0% {
+        transform: translatey(0px);
+        background-color: bisque;
+    }
+
+    25% {
+        transform: translatey(25px);
+        background-color: rgb(154, 135, 107);
+    }
+
+    50% {
+        transform: translatey(50px);
+        background-color: rgb(123, 105, 76);
+    }
+
+    75% {
+        transform: translatey(75px);
+        background-color: rgb(72, 59, 41);
+    }
+
+    100% {
+        transform: translatey(100px);
+        background-color: brown;
+    }
+}
+
+.down{
+   margin: 20px 550px;
+}
+
+.downbutton{
+    height: 50px;
+    background-color: rgb(107, 107, 162);
+    color: rgb(28, 30, 144);
+    padding: 15px;
+    font-size: 16px;    
+    border: none;
+    cursor: pointer; 
+    border-radius: 15px;
+}
+
+.down-menu{
+    display: none;
+    position: absolute;
+    background-color: rgb(62, 114, 165);
+    min-width: 135px;
+    text-align: center;
+   
+ 
+    transition-duration: 2px;
+}
+.down-menu a{
+    color: rgb(38, 211, 211);
+    text-decoration: none;
+    display: block;
+    border-radius: 25px;
+}
+.down-menu a:hover{
+    background-color: rgb(19, 80, 133);
+}
+.down:hover .down-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+} 
+.down:hover .downbutton{
+    background-color: rgb(116, 132, 222);
+    color: rgb(34, 49, 162);
+}

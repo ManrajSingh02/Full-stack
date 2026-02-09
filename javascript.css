@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.buttons{
+    height:500px;
+    width: 100%;
+    justify-items: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: center;
+}
+        #bt1{
+            height: 15px;
+            width: 50px;
+            border: solid black;
+            padding: 5px;
+            background-color: cadetblue;
+            border-radius: 7px;
+            cursor: pointer;  
+        }
+        #bt2{
+            height: 15px;
+            width: 60px;
+            border: solid black;
+            padding: 5px;
+            background-color: cadetblue;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        #bt3{
+            height: 15px;
+            width: 50px;
+            border: solid black;
+            padding: 5px;
+            background-color: cadetblue;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        #bt4{
+            height: 15px;
+            width: 50px;
+            border: solid black;
+            padding: 5px;
+            background-color: cadetblue;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+     

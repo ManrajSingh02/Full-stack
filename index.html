@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+<Style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .form{
+        height: 100vh;
+
+        background-color: beige;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        }
+    button{
+        height: 25px;
+        width: 7%;
+        color: cadetblue;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: turquoise;
+    }
+    button:hover{
+        border-color: brown;
+        background-color: blue;
+        border-radius: 15px;
+        transition-duration: 3s;
+    }
+</Style>
+</head>
+<body>
+
+    <div class="form">
+
+    <label for="first name">First name</label>
+    <input  required rtype="text" id="" placeholder="first name">
+
+     <label for="last name">Last name</label>
+    <input type="text" placeholder="last name">
+
+     <label for ="email">email_id</label>
+    <input  type="email" id="email_id" placeholder="email">
+
+     <label for="age">age</label>
+    <input type="number" placeholder="age">
+
+     <label for="password">password</label>
+    <input type="password" placeholder="password">
+
+    <button>
+        Submit
+    </button>
+    </div>
+</body>
+</html>

@@ -27,8 +27,10 @@ const firstname = 'Manraj';
 const lastname = 'singh';
 const age=23;
 const address='phagwara';
+const istutor='true';
 
 console.log(firstname);
 console.log(lastname);
 console.log(age);
 console.log(address);
+console.log(istutor);

@@ -1,0 +1,31 @@
+.box {
+  height: 500px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  border: solid black;
+}
+#box1 {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  border: solid black;
+  position: absolute;
+  z-index: 999;
+}
+#box2 {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  border: solid rgb(88, 169, 41);
+  position: absolute;
+  z-index: 999;
+}
+#box3 {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(42, 36, 126);
+  border: solid black;
+  position: absolute;
+  z-index: 25;
+}

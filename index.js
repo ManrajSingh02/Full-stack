@@ -25,7 +25,6 @@ bt4.addEventListener("click", function () {
 });
 
 
-// console.log(document.getElementById('sampleButton'))
 document.getElementById('sampleButton').addEventListener('click',function(){
     const number=4
 
@@ -36,6 +35,18 @@ document.getElementById('sampleButton').addEventListener('click',function(){
         alert("else condition is true")
     }
 })
+
+document.getElementById('toggleButton').addEventListener('click',function(){
+if(document.body.style.background === "yellow"){
+  document.body.style.background="blue";
+}
+else{
+  document.body.style.background="yellow";
+}
+})
+
+
+
 
 
 
@@ -54,7 +65,7 @@ console.log(istutor);
 
 
 
-const stuobj={
+const stu={
   firstname: "Mani",
   lastname:"Singh",
   age:23,
@@ -62,8 +73,8 @@ const stuobj={
   study:"MCA",
 }
 
-console.log(stuobj);
-console.log(stuobj.study);
+console.log(stu);
+console.log(stu.study);
 
 
 

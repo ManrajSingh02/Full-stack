@@ -59,3 +59,13 @@
             border-radius: 7px;
             cursor: pointer;
      }
+     #toggleButton{
+        height: 25px;
+            width: 80px;
+            margin: 100px 500px;
+            border: solid black;
+            padding: 5px;
+            background-color: rgb(97, 46, 129);
+            border-radius: 7px;
+            cursor: pointer;
+     }

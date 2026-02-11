@@ -50,14 +50,14 @@ else{
 
 
 
-const firstname = 'Manraj';
-const lastname = 'singh';
+const firstName = 'Manraj';
+const lastName = 'singh';
 const age=23;
 const address='phagwara';
 const istutor='true';
 
-console.log(firstname);
-console.log(lastname);
+console.log(firstName);
+console.log(lastName);
 console.log(age);
 console.log(address);
 console.log(istutor);
@@ -65,37 +65,37 @@ console.log(istutor);
 
 
 
-const stu={
-  firstname: "Mani",
-  lastname:"Singh",
+const stuDetails={
+  firstName: "Mani",
+  lastName:"Singh",
   age:23,
   address:"Phagwara",
   study:"MCA",
 }
 
-console.log(stu);
-console.log(stu.study);
+console.log(stuDetails);
+console.log(stuDetails.study);
 
 
 
-const mobileobj={
-    companyname:"Oneplus", 
+const mobileModel={
+    companyName:"Oneplus", 
     model:"oneplus12r",
-    launchyear:"2024",
+    launchYear:"2024",
     storage:"8gb,256gb",
 }
 
-console.log(mobileobj);
-console.log(mobileobj.model);
+console.log(mobileModel);
+console.log(mobileModel.model);
 
 
 
-const carobj={
-    companyname:"rangerover", 
+const carObj={
+    companyName:"rangerover", 
     model:"sports",
-    launchyear:"2024",
+    launchYear:"2024",
     seater:"7",
 }
 
-console.log(carobj);
-console.log(carobj.model);
+console.log(carObj);
+console.log(carObj.model);

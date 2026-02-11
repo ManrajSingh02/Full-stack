@@ -69,3 +69,23 @@
             border-radius: 7px;
             cursor: pointer;
      }
+
+     .print{
+         height: 100px;
+            width: 225px;
+            margin: 50px 50px;
+            display: flex;
+            /* flex-direction: row; */
+            flex-direction: column;
+            gap: 10px;
+            border: solid black;
+            padding: 5px;
+            background-color: rgb(22, 97, 158);
+            border-radius: 7px;
+            cursor: pointer;
+     }
+   .printing{
+     height: 100px;
+            width: 250px;
+            margin: 50px 50px;
+   }

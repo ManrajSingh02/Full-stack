@@ -47,9 +47,6 @@ else{
 
 
 
-
-
-
 const firstName = 'Manraj';
 const lastName = 'singh';
 const age=23;
@@ -97,5 +94,28 @@ const carObj={
     seater:"7",
 }
 
-console.log(carObj);
-console.log(carObj.model);
+console.log("Car Details:",carObj);
+console.log("Car Model:",carObj.model);
+
+
+
+print1.textContent=stuDetails.firstName 
+print2.textContent=stuDetails.lastName
+print3.textContent=mobileModel.launchYear
+print4.textContent=carObj.companyName
+
+
+
+document.getElementById("Full Name").textContent =
+    "Full Name: " + stuDetails.firstName + " " + stuDetails.lastName;
+
+document.getElementById("address").textContent =
+    "City: " + stuDetails.address;
+
+document.getElementById("study").textContent =
+    "Education: " + stuDetails.study;
+
+    document.getElementById("launch").textContent =
+    "mobile launch year: " + mobileModel.model +" "+ mobileModel.launchYear;
+
+

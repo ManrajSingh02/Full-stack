@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checker app</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        main{
+            height: 700px;
+            width: 100%;
+            background-color: rgb(127, 214, 214);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+        #button{
+            border: solid black;
+            padding: 15px;
+            background-color: rgb(142, 201, 203);
+            border-radius: 7px;
+            cursor: pointer;  
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+     <main>
+
+    <h2>Welcome Sir/Madam</h2>
+
+    <input type="text" id="inputId1" placeholder="Enter your name">
+    <!-- <input type="number" id="inputId2" placeholder="Enter your id"> -->
+    <button id="button">Click</button>
+
+    <p id="para"></p>
+
+    <script>
+        const inputdata = document.getElementById("inputId1");
+        const button = document.getElementById("button");
+        const para = document.getElementById("para");
+
+        const details = {
+            name: "",
+            // id:"",
+        };
+
+        button.addEventListener("click", function () {
+
+            const inputValue = inputdata.value;
+            if (inputValue === "") {
+                alert("Please enter your name");
+                console.log("Input field is empty");
+            }
+
+            details.name = inputValue;
+
+            if (details.name === "mani") {
+                details.allowed = true;
+                console.log("User is allowed:", details);
+
+                para.textContent = "Welcome " + details.name;
+                para.style.color = "green";
+            } 
+            
+            else {
+                details.allowed = false;
+                console.log("User is not allowed:", details.name);
+
+                para.textContent = "Not allowed";
+                para.style.color = "red";
+            }
+        });
+</script>
+</body>
+</html>

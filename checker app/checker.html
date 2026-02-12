@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checker app</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        main{
+            height: 700px;
+            width: 100%;
+            background-color: darkcyan;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+        #btn{
+            border: solid black;
+            padding: 15px;
+            background-color: rgb(130, 160, 161);
+            border-radius: 7px;
+            cursor: pointer;  
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+     <main>
+        <h1>Welcome User</h1>
+
+
+      <label>Full Name</label>
+  <input type="text" id="inputId">
+
+   <!-- <label>Password</label>
+  <input type="password" id="password"> -->
+
+  
+        
+  
+  <div class="button" id="btn">Click</div>
+  <p id="para"></p>
+     </main>
+
+
+<script>
+
+const nameObj={
+    fullName:"",
+}
+
+
+btn.addEventListener('click',function(){
+ if(document.inputId.value === ""){
+ alert('Please enter your Full Name');}
+ else if(document.inputId.value === 'manraj'){
+        document.para.textContent === 'welcome manraj'
+ }
+});
+
+
+
+
+
+</script>
+</body>
+</html>

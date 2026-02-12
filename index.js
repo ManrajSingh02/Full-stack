@@ -106,8 +106,8 @@ print4.textContent=carObj.companyName
 
 
 
-document.getElementById("Full Name").textContent =
-    "Full Name: " + stuDetails.firstName + " " + stuDetails.lastName;
+document.getElementById("FullName").textContent =
+    "FullName: " + stuDetails.firstName + " " + stuDetails.lastName;
 
 document.getElementById("address").textContent =
     "City: " + stuDetails.address;
@@ -116,6 +116,6 @@ document.getElementById("study").textContent =
     "Education: " + stuDetails.study;
 
     document.getElementById("launch").textContent =
-    "mobile launch year: " + mobileModel.model +" "+ mobileModel.launchYear;
+    "mobilelaunchyear: " + mobileModel.model +" "+ mobileModel.launchYear;
 
 

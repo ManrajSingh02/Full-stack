@@ -1,0 +1,73 @@
+main {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login {
+    height: 350px;
+    width: 350px;
+  background: rgba(209, 10, 10, 0.575);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 100px 550px;
+}
+
+.dashboard {
+     height: 200px;
+    width: 350px;
+  background: rgba(209, 10, 10, 0.575);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+   margin: 100px 550px;
+}
+
+.register {
+    height: 500px;
+    width: 350px;
+  background: rgba(209, 10, 10, 0.575);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 100px 550px;
+  
+}
+
+input {
+  
+ display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 80px;
+  
+}
+
+button {
+    height: 30px;
+  width: 60px;
+  background-color: #0ab2dc;
+  color: rgb(105, 42, 42);
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: #4c79b4;
+  transform: scale(1.2);
+}
+
+.message {
+  margin-top: 10px;
+  color: red;
+}
+
+.link {
+  margin-top: 15px;
+}

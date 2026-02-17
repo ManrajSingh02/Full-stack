@@ -1,17 +1,20 @@
-
-const array = [];
-
 let currentUser = null;
-currentUser = array[0];
 
+const btn = document.getElementById("btn");
 
-function registerdata() {
+btn?.addEventListener("click", function (event) {
+  event.preventDefault();
+
   const enterFullName = document.getElementById("fullName").value;
   const enterEmail = document.getElementById("email").value;
   const enterPassword = document.getElementById("password").value;
   const enterAge = document.getElementById("age").value;
   const enterCity = document.getElementById("city").value;
 
+  if (!enterFullName || !enterEmail || !enterPassword || !enterAge || !enterCity) {
+    alert("Please fill in all fields before registering.");
+    return;
+  }
 
   const details = {
     fullName: enterFullName,
@@ -19,57 +22,56 @@ function registerdata() {
     password: enterPassword,
     age: enterAge,
     city: enterCity,
-     isLoggedIn: false
+    isLoggedIn: false,
   };
 
-array.push(details);
+  window.location.href = `login.html?name=${enterFullName}&email=${enterEmail}&password=${enterPassword}&city=${enterCity}`;
+});
 
 
-  window.location.href = "login.html";
-}
-
-
-function logindata() {
-  const loginMail = document.getElementById("loginMail").value;
-  const loginPassword = document.getElementById("loginPassword").value;
+const loginBtn = document.getElementById("loginBtn");
   const message = document.getElementById("message");
 
- if (array[0] && array[0].email === loginMail && array[0].password === loginPassword) {
-    currentUser = array[0];
-  } else if (array[1] && array[1].email === loginMail && array[1].password === loginPassword) {
-    currentUser = array[1];
-  } else if (array[2] && array[2].email === loginMail && array[2].password === loginPassword) {
-    currentUser = array[2];
-  } else {
-    message.textContent = "Invalid email or password";
-    return;
+
+const params = new URLSearchParams(window.location.search);
+
+const nameFromRegister = params.get("name");
+const emailFromRegister = params.get("email");
+const passwordFromRegister = params.get("password");
+
+console.log(emailFromRegister);
+console.log(passwordFromRegister);
+
+loginBtn?.addEventListener("click", function (event) {
+event.preventDefault();
+const loginMail = document.getElementById("loginMail").value;
+  const loginPassword = document.getElementById("loginPassword").value;
+
+
+  if(loginMail === emailFromRegister && loginPassword === passwordFromRegister){
+    window.location.href = `dashboard.html?name=${nameFromRegister}&email=${emailFromRegister}&password=${passwordFromRegister} `;
+  }else{
+      message.textContent = 'Invalid email or password'
   }
+  console.log(loginMail)
+  console.log(loginPassword)
 
-  currentUser.isLoggedIn = true;
-
-  window.location.href = "dashboard.html";
-}
- 
+});
 
 
+function dashboard() {
+  const dashboard = document.getElementById("dashboard");
 
-
-function dashboard(){
-const dashboard = document.getElementById("dashboard");
-
- if (currentUser && currentUser.isLoggedIn === true) {
-
+  if (currentUser && currentUser.isLoggedIn === true) {
     dashboardcontent.innerHTML = `
       <h2>Welcome, ${currentUser.fullName}</h2>
       <p>Email:${currentUser.email}</p>
       <p>City: ${currentUser.city}</p>
       <p>Age: ${currentUser.age}</p>
     `;
-
   } else {
-
     dashboardcontent.innerHTML = `
       <a href="login.html">Go to Login</a>
       <a href="register.html">Go to Register</a>`;
-  } 
+  }
 }

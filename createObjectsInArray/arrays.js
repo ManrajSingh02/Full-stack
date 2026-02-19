@@ -16,62 +16,72 @@ btn?.addEventListener("click", function (event) {
     return;
   }
 
-  const details = {
-    fullName: enterFullName,
-    email: enterEmail,
-    password: enterPassword,
-    age: enterAge,
-    city: enterCity,
-    isLoggedIn: false,
-  };
-
   window.location.href = `login.html?name=${enterFullName}&email=${enterEmail}&password=${enterPassword}&city=${enterCity}`;
 });
 
 
+
 const loginBtn = document.getElementById("loginBtn");
-  const message = document.getElementById("message");
+ 
 
 
 const params = new URLSearchParams(window.location.search);
 
-const nameFromRegister = params.get("name");
+
 const emailFromRegister = params.get("email");
 const passwordFromRegister = params.get("password");
 
 console.log(emailFromRegister);
 console.log(passwordFromRegister);
 
+
 loginBtn?.addEventListener("click", function (event) {
-event.preventDefault();
-const loginMail = document.getElementById("loginMail").value;
+  event.preventDefault();
+
+  const loginMail = document.getElementById("loginMail").value;
   const loginPassword = document.getElementById("loginPassword").value;
 
-
-  if(loginMail === emailFromRegister && loginPassword === passwordFromRegister){
-    window.location.href = `dashboard.html?name=${nameFromRegister}&email=${emailFromRegister}&password=${passwordFromRegister} `;
-  }else{
-      message.textContent = 'Invalid email or password'
+  if (!loginMail || !loginPassword) {
+    alert("Please fill your Email & Password");
+  } 
+  else if (loginMail === emailFromRegister && loginPassword === passwordFromRegister) {
+    window.location.href = `dashboard.html?email=${emailFromRegister}`;
+    return;
+  } 
+  else {
+    alert("Invalid email or password");
   }
-  console.log(loginMail)
-  console.log(loginPassword)
 
+  console.log(loginMail);
+  console.log(loginPassword);
 });
 
 
 function dashboard() {
-  const dashboard = document.getElementById("dashboard");
+ const dashboardContent = document.getElementById("dashboardContent");
 
-  if (currentUser && currentUser.isLoggedIn === true) {
-    dashboardcontent.innerHTML = `
-      <h2>Welcome, ${currentUser.fullName}</h2>
-      <p>Email:${currentUser.email}</p>
-      <p>City: ${currentUser.city}</p>
-      <p>Age: ${currentUser.age}</p>
+  if (!dashboardContent) return;
+
+  const params = new URLSearchParams(window.location.search);
+
+  const fullName = params.get("fullName");
+  const email = params.get("email");
+  const age = params.get("age");
+  const city = params.get("city");
+
+  if (fullName || email) {
+    dashboardContent.innerHTML = `
+      <h2>Welcome, ${fullName}</h2>
+      <p>Email: ${email}</p>
+      <p>City: ${city}</p>
+      <p>Age: ${age}</p>
     `;
   } else {
-    dashboardcontent.innerHTML = `
-      <a href="login.html">Go to Login</a>
-      <a href="register.html">Go to Register</a>`;
+    dashboardContent.innerHTML = `
+      <a href="login.html">Go to Login</a><br>
+      <a href="register.html">Go to Register</a>
+    `;
   }
 }
+
+dashboard();

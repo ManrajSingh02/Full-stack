@@ -1,4 +1,3 @@
-
 const userObj = {
   name: "John",
   age: 22,
@@ -27,7 +26,7 @@ function generateUserSummary(user, greeting = "Welcome") {
   }
 
   const color = favoriteColor[1];
-  console.log("First Favorite Color:", color);
+  console.log("Favorite Color:", color);
 
   const finalMessage = `
 ${greeting} ${name}.
@@ -86,3 +85,4 @@ function generateUser(user, Hello = "Hi") {
 }
 
 document.getElementById("output").innerText = generateUser(user);
+console.log("new");

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CRUD</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 40px;
+      }
+      input {
+        margin: 5px;
+        padding: 5px;
+      }
+      button {
+        padding: 5px 10px;
+        margin: 5px;
+        width: 65px;
+      }
+      table {
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Please enter to do</h2>
+
+    <input type="hidden" id="id" />
+    <input type="text" id="name" placeholder="Enter Name" />
+
+    <button id="saveUser" onclick="saveUser()">Save</button>
+    
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody id="userTable"></tbody>
+    </table> 
+
+    <script>
+      let users= [];
+      let idCounter = 1;
+
+      function saveUser() {
+        const id = document.getElementById("id").value;
+        const name = document.getElementById("name").value;
+        if (!name) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        if (id) {
+          const user = users.find((u) => u.id == id);
+          user.name = name;
+        
+        } else {
+          users.push({
+            id: idCounter++,
+            name: name,
+            
+          });
+        }
+tableUsers();
+        clearForm();
+        
+      }
+
+      console.log("saving users");
+
+      function tableUsers() {
+        const table = document.getElementById("userTable");
+        table.innerHTML = "";
+
+        users.forEach((user) => {
+          table.innerHTML += `<tr>
+          <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>
+                    <button onclick="editUser(${user.id})">Edit</button>
+                    <button onclick="deleteUser(${user.id})">Delete</button>
+                </td>
+            </tr>`;
+        });
+      }
+console.log("saving users");
+         function clearForm() {
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+      }
+      
+       function editUser(id) {
+    const user = users.find(u => u.id == id);
+    document.getElementById("id").value = user.id;
+    document.getElementById("name").value = user.name; 
+}
+
+function deleteUser(id){
+  users = users.filter(u => u.id !== id);
+  tableUsers();
+} 
+console.log("saving users");
+   
+    </script>
+  </body>
+</html>

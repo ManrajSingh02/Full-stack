@@ -42,7 +42,7 @@ if (loginForm) {
         if (storedUser &&
             username === storedUser.username &&
             password === storedUser.password) {
-            sessionStorage.setItem("loggedInUser", storedUser.username);
+            localStorage.setItem("loggedInUser", storedUser.username);
 
             window.location.href = "dashboard.html";
         } else {
@@ -53,11 +53,13 @@ if (loginForm) {
 
 console.log("login");
 
+ 
+
 
 
 if (window.location.pathname.includes("dashboard.html")) {
 
-    const loggedInUser = sessionStorage.getItem("loggedInUser");
+    const loggedInUser = localStorage.getItem("loggedInUser");
 
     if (!loggedInUser) {
         alert("Please login first");
@@ -92,7 +94,7 @@ const logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
-        sessionStorage.removeItem("loggedInUser");
+        localStorage.removeItem("loggedInUser");
         alert("You are logged out");
         window.location.href = "login.html";
     });
@@ -105,7 +107,7 @@ const deleteBtn = document.getElementById("btn");
 if (deleteBtn) {
     deleteBtn.addEventListener("click", function () {
         localStorage.removeItem("user");
-        sessionStorage.removeItem("loggedInUser");
+        localStorage.removeItem("loggedInUser");
 
         alert("Your account is deleted");
         window.location.href = "register.html";

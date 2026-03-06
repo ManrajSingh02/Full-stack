@@ -36,6 +36,7 @@ if (loginForm) {
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
+        
 
         const storedUser = JSON.parse(localStorage.getItem("user"));
 
@@ -43,6 +44,9 @@ if (loginForm) {
             username === storedUser.username &&
             password === storedUser.password) {
             localStorage.setItem("loggedInUser", storedUser.username);
+            const time = new Date().toLocaleString();
+            sessionStorage.setItem("time",time);
+
 
             window.location.href = "dashboard.html";
         } else {
@@ -59,33 +63,21 @@ console.log("login");
 
 if (window.location.pathname.includes("dashboard.html")) {
 
-    const loggedInUser = localStorage.getItem("loggedInUser");
+    const loggedInUser = (localStorage.getItem("loggedInUser"));
 
+    
     if (!loggedInUser) {
         alert("Please login first");
         window.location.href = "login.html";
     }
-
-
+    
+    
     const welcomeUser = document.getElementById("welcomeUser");
+    const time = sessionStorage.getItem("time");
     if (welcomeUser && loggedInUser) {
-        welcomeUser.innerText = "Welcome, " + loggedInUser;
+        welcomeUser.innerText = "Welcome, " + loggedInUser + "\nlogin time"+time;
+        
     }
-
-
-    function updateDateTime() {
-        const now = new Date();
-        const date = now.toLocaleDateString();
-        const time = now.toLocaleTimeString();
-
-        const dateTime = document.getElementById("dateTime");
-        if (dateTime) {
-            dateTime.innerText = "Date: " + date + " | Time: " + time;
-        }
-    }
-
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
 }
 
 
@@ -104,7 +96,7 @@ if (logoutBtn) {
 
 const deleteBtn = document.getElementById("btn");
 
-if (deleteBtn) {
+if (deleteBtn) {    
     deleteBtn.addEventListener("click", function () {
         localStorage.removeItem("user");
         localStorage.removeItem("loggedInUser");

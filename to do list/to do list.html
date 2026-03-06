@@ -27,13 +27,15 @@
     </style>
   </head>
   <body>
+
+
     <h2>Please enter to do</h2>
-
+<form onsubmit="saveUser(event)">
     <input type="hidden" id="id" />
-    <input type="text" id="name" placeholder="Enter Name" />
+    <input type="text" id="name" placeholder="Enter Name" name="username" />
 
-    <button id="saveUser" onclick="saveUser()">Save</button>
-    
+    <button id="saveUser" onsubmit="saveUser()" type="submit">Save</button>
+    </form>
 
     <table>
       <thead>
@@ -50,7 +52,9 @@
       let users= [];
       let idCounter = 1;
 
-      function saveUser() {
+      function saveUser(event) {
+
+        event.preventDefault();
         const id = document.getElementById("id").value;
         const name = document.getElementById("name").value;
         if (!name) {
@@ -103,10 +107,15 @@ console.log("saving users");
     document.getElementById("name").value = user.name; 
 }
 
+
 function deleteUser(id){
-  users = users.filter(u => u.id !== id);
-  tableUsers();
-} 
+  const Delete = confirm("you want to delete this item");
+  
+  if(Delete){
+    users = users.filter(u => u.id !== id);
+    tableUsers();
+  }
+}
 console.log("saving users");
    
     </script>
